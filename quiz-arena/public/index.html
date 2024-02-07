@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Group 27160.png" type="image/x-icon">
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="index.js" defer></script>
+    <title>Quiz Arena</title>
+</head>
+<body>
+    <!-------------------------Header container----------------------------->
+    <header>
+        <!------------------------------Navigation bar container------------------>
+        <nav>
+            <!------------------------Left section of the navigation bar------------>
+            <div class="nav-left">
+                <!-------------Logo container----------------->
+                <div class="logo-ctn">
+                    <img src="img/Qa.svg" alt="Logo">
+                </div>
+                <!--------------End of logo container-------------->
+                <p>Quiz <br>Arena</p>
+            </div>
+            <!--------------------------------Right part of the navigation bar-->
+            <div class="nav-right">
+                <!-------------------nav-right details container------------>
+                <div class="nav-right-det-ctn">
+                    <p class="username">John Cena</p>
+                    <p class="user-mail">jc@gmail.com</p>
+                </div>
+                <!--------------User display picture-------------->
+                <img src="img/Rectangle 7.png" alt="User-display-picture">
+            </div>
+        </nav>
+    </header>
+    <!------------------------Main section of the page---------------->
+    <main>
+        <!-----------------Intro section------------------->
+        <section class="intro">
+            <p class="intro-headline">Add question</p>
+            <p class="intro-details">Effortlessly expand your quiz database: Seamlessly add questions, answers, difficulty levels, 
+                and subjects with ease.
+            </p>
+        </section>
+
+        <!----------------Form container--------------------->
+        <form class="form">
+            <!--------------------------Qusetion input container------------>
+            <div class="question-ctn flex flex-col">
+                <label for="question">Question</label>
+                <p class="section-description">Input your question here and let the fun begin!</p>
+
+                <textarea name="question" cols="30" rows="10" placeholder="Input your question" class="input"></textarea>
+            </div>
+            <!-----------------Options input container---------------->
+            <div class="option-ctn flex flex-col">
+                <label for="options">Options</label>
+                <p class="section-description">Input your options here for a tailored experience.</p>
+
+                <input type="text" name="options" placeholder="Option One" class="mb-3 input option">
+                <input type="text" name="options" placeholder="Option Two" class="mb-3 input option">
+                <input type="text" name="options" placeholder="Option Three" class="mb-3 input option">
+                <input type="text" name="options" placeholder="Option Four" class="mb-3 input option">
+            </div>
+
+            <!-----------------Correct option selector container--------------------->
+            <div class="option-ctn flex flex-col">
+                <label for="correct-option">Correct answer option</label>
+                <p class="section-description">Select the right option to complete your quiz.</p>
+               <!----------------Option one selector------------------->
+               <div class="correct-ctn mb-3">
+                    <p>Option One</p>
+                    <div class="checkbox"></div>
+               </div>
+               <!----------------Option two selector------------------->
+               <div class="correct-ctn mb-3">
+                    <p>Option Two</p>
+                    <div class="checkbox"></div>
+               </div>
+               <!----------------Option three selector------------------->
+               <div class="correct-ctn mb-3">
+                    <p>Option Three</p>
+                    <div class="checkbox"></div>
+               </div>
+               <!----------------Option four selector------------------->
+               <div class="correct-ctn mb-3">
+                    <p>Option Four</p>
+                    <div class="checkbox"></div>
+               </div>
+           </div>
+            <!-----------------Subject input container---------------------->
+            <div class="subject-ctn flex flex-col">
+                <label for="subject">Subject choice</label>
+                <p class="section-description">Choose a subject that matches your question.</p>
+                <!------------drop down menu---------->
+                <div class="select-container">
+                    <input type="text" readonly placeholder="Choose subject" name="subject" class="toggle-btn subject-input input">
+                    <!-----------------Drop down menu indicator-------------->
+                    <div class="arrow-container subject-arrow">
+                        <img src="img/arrow-down.svg" alt="Drop-down-indicator">
+                    </div>
+                </div>
+                <!------------------------Option container------------------>
+                <div class="answer-ctn hidden">
+                    <p class="mt-2 subject border-b border-borderColor">Maths</p>
+                    <p class="subject  border-b border-borderColor">History</p>
+                    <p class="mb-2 subject">Science</p>
+                </div>
+            </div>
+            <!-----------------Difficulty input container---------------------->
+            <div class="subject-ctn flex flex-col">
+                <label for="difficulty">Difficulty level</label>
+                <p class="section-description">Choose a difficulty level that matches your question.
+                </p>
+                <!----------------------Drop down down container---------------->
+                <div class="select-container">
+                    <input type="text" readonly placeholder="Choose difficulty" name="difficulty" class="toggle-btn diff-input input">
+
+                    <div class="arrow-container diff-arrow">
+                        <img src="img/arrow-down.svg" alt="Drop-down-indicator">
+                    </div>
+                </div>
+                <!------------------------Option container------------------>
+                <div class="option-ctn-2 hidden">
+                    <p class="mt-2 dif border-b border-borderColor">Easy</p>
+                    <p class="dif border-b border-borderColor">Medium</p>
+                    <p class="mb-2 dif">Hard</p>
+                </div>
+            </div>
+            <!------------------------Submit button----------------------------->
+            <input class="submit" type="submit" placeholder="submit">
+        </form>
+        <!------------------Provides more details on the error---------->
+        <p class="hidden error-msg"></p>
+        <!----------------------------Message container-------------------------->
+        <div class="message-ctn hidden">
+            <!----------------------Message block container-------------------->
+            <div class="msg-block">
+                <!-----------------------Hide button---------------->
+                <svg class="cancel-btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" fill="none">
+                    <path opacity="0.05" d="M61.6673 35.0002C61.6673 49.7278 49.7282 61.6668 35.0006 61.6668C20.2731 61.6668 8.33398 49.7278 8.33398 35.0002C8.33398 20.2726 20.2731 8.3335 35.0006 8.3335C49.7282 8.3335 61.6673 20.2726 61.6673 35.0002Z" fill="#292D32" stroke="black" stroke-width="5"/>
+                    <path d="M38.0905 34.9998L44.7988 28.2915C45.6447 27.4456 45.6447 26.0456 44.7988 25.1998C43.953 24.354 42.553 24.354 41.7072 25.1998L34.9988 31.9081L28.2905 25.1998C27.4447 24.354 26.0447 24.354 25.1988 25.1998C24.353 26.0456 24.353 27.4456 25.1988 28.2915L31.9072 34.9998L25.1988 41.7081C24.353 42.554 24.353 43.954 25.1988 44.7998C25.6363 45.2373 26.1905 45.4415 26.7447 45.4415C27.2988 45.4415 27.853 45.2373 28.2905 44.7998L34.9988 38.0915L41.7072 44.7998C42.1447 45.2373 42.6988 45.4415 43.253 45.4415C43.8072 45.4415 44.3613 45.2373 44.7988 44.7998C45.6447 43.954 45.6447 42.554 44.7988 41.7081L38.0905 34.9998Z" fill="#292D32"/>
+                </svg>
+                <!----------------Message block body-->
+                <img src="img/quiz (1) 1.png" alt="Quiz-illustration">
+                <p class="msg-headline">Congratulations</p>
+                <p class="msg-body">Exciting news! We've just expanded our database with a valuable addition – your insightful question 
+                    is now part of our growing repository. Contributing to the wealth of knowledge for all to explore and learn. Thank you 
+                    for enhancing our educational journey!
+                </p>
+                <button class="cancel-btn">Submit a new question</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

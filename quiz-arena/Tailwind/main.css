@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Inter', sans-serif;
+
+    @apply m-0 p-0
+}
+
+header {
+    @apply flex justify-center items-center h-[100px] w-[100%] bg-blue-700
+}
+
+nav {
+    @apply flex h-fit w-[100%] items-center justify-between
+}
+
+.nav-left {
+    @apply flex ml-5 items-center justify-center gap-2
+}
+
+.logo-ctn {
+    @apply flex items-center justify-center bg-white h-[45px] w-12 rounded-sm
+}
+
+.logo-ctn img {
+    @apply w-[70%] h-[70%]
+}
+
+.nav-left p {
+    @apply text-white text-[12px] font-medium tracking-[0.229px]
+}
+
+.nav-right {
+    @apply flex mr-5 items-center justify-center gap-3
+}
+
+.nav-right img {
+    @apply h-[52px] w-[52px] rounded-[50%]
+}
+
+.nav-right-det-ctn {
+    @apply flex flex-col
+}
+
+.username {
+    @apply text-lg text-white font-semibold
+}
+
+.user-mail {
+    @apply text-white opacity-50 text-[13px]
+}
+
+main {
+    @apply flex flex-col items-center
+}
+
+.intro {
+    @apply flex flex-col w-[85%] mt-[75px]
+}
+
+.intro-headline {
+    @apply text-4xl font-semibold text-myblack tracking-[-0.72px]
+}
+
+.intro-details {
+    @apply text-myblack opacity-60 text-lg leading-7 font-normal
+}
+
+form {
+    @apply flex flex-col gap-10 w-[75%] mt-[50px]
+}
+
+label {
+    @apply text-myblack text-2xl font-semibold tracking-[-0.48px]
+}
+
+.section-description {
+    @apply text-myblack opacity-60 text-lg leading-7 tracking-[-0.36px] mb-4
+}
+
+textarea {
+    @apply  w-[100%] rounded-md h-[142px] outline-0 border border-borderColor pl-3 pt-2 text-xl text-myblack opacity-70 leading-7 font-normal
+}
+
+.option-ctn input, .option-ctn .correct-ctn {
+    @apply w-[100%] px-4 py-2 h-20 rounded-md outline-0 border border-borderColor text-xl text-myblack opacity-70 font-normal
+}
+
+.option-ctn .correct-ctn {
+    transition: border-color .3s ease-in-out;
+
+    @apply flex justify-between items-center relative
+}
+
+.checkbox {
+    transition: background-color .5s ease-in-out, outline .5s ease-in-out, width .3s ease-in-out, height .3s ease-in-out;
+
+    @apply w-5 h-5 rounded-[50%] border border-myblack outline-none
+}
+
+.checkbox.active {
+    @apply w-4 h-4 border-none bg-myblack outline-2 outline-myblack outline-offset-2
+}
+
+.select-container {
+    @apply relative flex
+}
+
+.select-container input {
+    @apply w-[100%] h-20 px-4 py-2  rounded-md outline-none bg-[#F7F7F7] text-[22px] border border-transparent  bg-none
+}
+
+.subject-ctn .option-ctn-2, .subject-ctn .answer-ctn {
+    box-shadow: 1px 1px 15px 5px rgba(20, 25, 31, .2);
+
+    @apply flex-col w-[100%] bg-white text-[22px] text-myblack tracking-[-0.44px] font-normal items-center gap-2 rounded-md border
+
+    border-borderColor mt-3
+}
+
+.option-ctn-2 p, .answer-ctn p {
+    @apply w-[100%] px-2 py-3 cursor-pointer
+
+    active:bg-gray-50
+}
+
+.input {
+    transition: border-color .3s ease-in-out;
+}
+
+.input.success, .correct-ctn.success {
+    @apply border border-green-400
+}
+
+.input.error, .correct-ctn.error {
+    @apply border border-red-400
+}
+
+.arrow-container {
+    transition: all .3s ease-in-out;
+
+    @apply absolute right-4 top-[40%]
+}
+
+.arrow-container img {
+    @apply w-6 h-6
+}
+
+.arrow-container.active {
+    transform: translateY(-50%) rotate(180deg);
+
+    @apply top-[50%]
+}
+
+.submit {
+    @apply flex items-center justify-center w-[100%] h-[60px] text-white bg-[#0F2451] text-2xl font-semibold tracking-[-0.48px] text-center
+    
+    mb-10 outline-0
+}
+
+.error-msg {
+    @apply fixed p-4 bg-myblack bottom-8 rounded-md text-white opacity-80
+}
+
+.message-ctn {
+    @apply fixed h-[100vh] w-[100%] bg-[#00000080] m-0 left-0 top-0 items-center justify-center
+}
+
+.msg-block {
+    @apply relative flex flex-col items-center justify-center bg-white w-[600px] h-[500px] rounded-md
+}
+
+.msg-block svg {
+    @apply absolute flex h-[50px] w-[50px] rounded-[50%] top-5 right-5 z-10
+}
+
+.msg-block img {
+    @apply w-[107px] h-[107px] mb-6
+}
+
+.msg-headline {
+    @apply text-center text-myblack font-semibold text-2xl mb-3 w-fit
+}
+
+.msg-body {
+    @apply text-center opacity-50 text-lg leading-7 tracking-[-0.48px] mb-6 w-[90%]
+}
+
+.msg-block button {
+    @apply bg-[#0F2451] text-white text-lg font-semibold flex items-center justify-center text-center h-[50px] w-[90%]
+}
+
+.slide-in {
+    animation: slide-in .3s 1 ease-in;
+}
+
+@keyframes slide-in {
+    0% {
+        translate: 0 30px;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
+/*--------------------------------- Media queries---------------------------------*/
+
+@media screen and (max-width: 768px) {
+    .intro {
+        @apply w-[90%]
+    }
+
+    form {
+        @apply w-[85%]
+    }
+}
+
+@media screen and (max-width: 487px) {
+    .intro {
+        @apply w-[95%]
+    }
+
+    form {
+        @apply w-[90%]
+    }
+
+    .msg-block {
+        @apply w-[90%]
+    }
+}
