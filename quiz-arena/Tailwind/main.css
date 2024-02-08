@@ -229,6 +229,10 @@ textarea {
         @apply text-2xl
     }
 
+    .intro-details {
+        @apply leading-6
+    }
+
     form {
         @apply w-[95%]
     }

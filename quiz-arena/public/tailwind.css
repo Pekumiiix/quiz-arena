@@ -1036,6 +1036,10 @@ textarea{
     line-height: 2rem;
   }
 
+  .intro-details{
+    line-height: 1.5rem;
+  }
+
   form{
     width: 95%;
   }
