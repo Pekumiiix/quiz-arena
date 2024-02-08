@@ -656,6 +656,7 @@ nav{
 .nav-right-det-ctn{
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 
 .username{
@@ -900,7 +901,7 @@ textarea{
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.48px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -994,7 +995,7 @@ textarea{
   text-align: center;
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-weight: 600;
+  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1030,8 +1031,28 @@ textarea{
     width: 95%;
   }
 
+  .intro-headline{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   form{
-    width: 90%;
+    width: 95%;
+  }
+
+  label{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .section-description{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .input, .correct-ctn p, .subject-input, .subject, .dif{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .msg-block{

@@ -43,7 +43,7 @@ nav {
 }
 
 .nav-right-det-ctn {
-    @apply flex flex-col
+    @apply flex flex-col items-end
 }
 
 .username {
@@ -157,7 +157,7 @@ textarea {
 }
 
 .submit {
-    @apply flex items-center justify-center w-[100%] h-[60px] text-white bg-[#0F2451] text-2xl font-semibold tracking-[-0.48px] text-center
+    @apply flex items-center justify-center w-[100%] h-[60px] text-white bg-[#0F2451] text-2xl font-medium tracking-[-0.48px] text-center
     
     mb-10 outline-0
 }
@@ -191,7 +191,7 @@ textarea {
 }
 
 .msg-block button {
-    @apply bg-[#0F2451] text-white text-lg font-semibold flex items-center justify-center text-center h-[50px] w-[90%]
+    @apply bg-[#0F2451] text-white text-lg font-medium flex items-center justify-center text-center h-[50px] w-[90%]
 }
 
 .slide-in {
@@ -225,8 +225,24 @@ textarea {
         @apply w-[95%]
     }
 
+    .intro-headline {
+        @apply text-2xl
+    }
+
     form {
-        @apply w-[90%]
+        @apply w-[95%]
+    }
+
+    label {
+        @apply text-xl
+    }
+
+    .section-description {
+        @apply text-base
+    }
+
+    .input, .correct-ctn p, .subject-input, .subject, .dif {
+        @apply text-lg
     }
 
     .msg-block {

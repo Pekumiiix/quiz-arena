@@ -28,6 +28,7 @@ function updateSubject() {
         subjectList.addEventListener('click', () => {
             subjectInput.value = subjectLists[index].innerHTML
             optionsContainer.classList.add('hidden')
+            optionsContainer.classList.remove('slide-in')
             subjectArrow.classList.toggle('active')
         })
     })
@@ -51,6 +52,7 @@ function updateDifficulty() {
         difficultyList.addEventListener('click', () => {
             difficultyInput.value = difficultyLists[index].innerHTML
             optionsContainer.classList.add('hidden')
+            optionsContainer.classList.remove('slide-in')
             difficultyArrow.classList.toggle('active')
         })
     })
@@ -177,37 +179,6 @@ const isValidInput = function validateInput() {
     }
 
     //Checks if the user has selected a correct answer
-    /*if (valid) {
-        for (const checkbox of checks) {
-            if (checkbox.classList.contains('active')) {
-                valid = true; //At least one checkbox has 'active' class
-    
-                checkContainers.forEach((checkContainer) => {
-                    checkContainer.classList.remove('error')
-                    checkContainer.classList.add('success')
-                })
-            } else {
-                valid = false;
-            }
-        }
-    
-        if (!valid) {
-            checkContainers.forEach((checkContainer) => {
-                checkContainer.classList.add('error')
-                checkContainer.classList.remove('success')
-            })
-    
-            errorMessage.classList.remove('hidden')
-            errorMessage.innerHTML = 'Please select a correct option'
-    
-            setTimeout(() => {
-                errorMessage.classList.add('hidden')
-            }, 3000)
-        } else {
-            valid = true;
-        }
-    }*/
-
     if (valid) {
         let atLeastOneActive = false; // Track if at least one checkbox is active
         
@@ -218,7 +189,7 @@ const isValidInput = function validateInput() {
             }
         }
         
-        // If no checkbox is active, mark them as error
+        //If no checkbox is active, mark them as error
         if (!atLeastOneActive) {
             checkContainers.forEach((checkContainer) => {
                 checkContainer.classList.add('error');
@@ -232,11 +203,9 @@ const isValidInput = function validateInput() {
                 errorMessage.classList.add('hidden');
             }, 3000);
         
-            return false; // Return false because no checkbox is active
+            return false; //Return false because no checkbox is active
         }
     }
-    
-    
 
     //Checks if the options fields are valid by checking if any of the fields have the same value
     if(valid) {
