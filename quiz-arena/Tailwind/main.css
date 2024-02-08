@@ -67,7 +67,7 @@ main {
 }
 
 .intro-details {
-    @apply text-myblack opacity-60 text-lg leading-7 font-normal
+    @apply text-myblack opacity-60 text-lg leading-7 font-normal mt-1
 }
 
 form {

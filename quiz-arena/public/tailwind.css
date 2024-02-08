@@ -696,6 +696,7 @@ main{
 }
 
 .intro-details{
+  margin-top: 0.25rem;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.75rem;

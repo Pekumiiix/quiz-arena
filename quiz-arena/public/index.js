@@ -163,8 +163,10 @@ const isValidInput = function validateInput() {
     })
 
     checks.forEach((check) => {
-        if(!check.classList.contains('active')) {
-            fauxCheck = true;
+        if(check.classList.contains('active')) {
+            valid = true;
+        } else {
+            fauxCheck = false;
         }
     })
 
@@ -175,7 +177,7 @@ const isValidInput = function validateInput() {
     }
 
     //Checks if the user has selected a correct answer
-    if (valid) {
+    /*if (valid) {
         for (const checkbox of checks) {
             if (checkbox.classList.contains('active')) {
                 valid = true; //At least one checkbox has 'active' class
@@ -204,7 +206,36 @@ const isValidInput = function validateInput() {
         } else {
             valid = true;
         }
+    }*/
+
+    if (valid) {
+        let atLeastOneActive = false; // Track if at least one checkbox is active
+        
+        for (const checkbox of checks) {
+            if (checkbox.classList.contains('active')) {
+                atLeastOneActive = true; // At least one checkbox has 'active' class
+                break; // No need to continue loop, we found one active checkbox
+            }
+        }
+        
+        // If no checkbox is active, mark them as error
+        if (!atLeastOneActive) {
+            checkContainers.forEach((checkContainer) => {
+                checkContainer.classList.add('error');
+                checkContainer.classList.remove('success');
+            });
+        
+            errorMessage.classList.remove('hidden');
+            errorMessage.innerHTML = 'Please select a correct option';
+        
+            setTimeout(() => {
+                errorMessage.classList.add('hidden');
+            }, 3000);
+        
+            return false; // Return false because no checkbox is active
+        }
     }
+    
     
 
     //Checks if the options fields are valid by checking if any of the fields have the same value
