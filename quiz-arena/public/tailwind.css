@@ -851,6 +851,11 @@ textarea{
   padding-bottom: 0.75rem;
 }
 
+.option-ctn-2 p:hover, .answer-ctn p:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
 .option-ctn-2 p:active, .answer-ctn p:active{
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -1061,5 +1066,11 @@ textarea{
 
   .msg-block{
     width: 90%;
+  }
+
+  .submit{
+    height: 45px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
