@@ -167,44 +167,22 @@ const isValidInput = function validateInput() {
     checks.forEach((check) => {
         if(check.classList.contains('active')) {
             valid = true;
-        } else {
             fauxCheck = false;
+        } else {
+            fauxCheck = true;
         }
     })
 
     if(fauxCheck) {
         checkContainers.forEach((checkContainer) => {
             checkContainer.classList.add('error')
+            checkContainer.classList.remove('success')
         })
-    }
-
-    //Checks if the user has selected a correct answer
-    if (valid) {
-        let atLeastOneActive = false; // Track if at least one checkbox is active
-        
-        for (const checkbox of checks) {
-            if (checkbox.classList.contains('active')) {
-                atLeastOneActive = true; // At least one checkbox has 'active' class
-                break; // No need to continue loop, we found one active checkbox
-            }
-        }
-        
-        //If no checkbox is active, mark them as error
-        if (!atLeastOneActive) {
-            checkContainers.forEach((checkContainer) => {
-                checkContainer.classList.add('error');
-                checkContainer.classList.remove('success');
-            });
-        
-            errorMessage.classList.remove('hidden');
-            errorMessage.innerHTML = 'Please select a correct option';
-        
-            setTimeout(() => {
-                errorMessage.classList.add('hidden');
-            }, 3000);
-        
-            return false; //Return false because no checkbox is active
-        }
+    } else {
+        checkContainers.forEach((checkContainer) => {
+            checkContainer.classList.remove('error')
+            checkContainer.classList.add('success')
+        })
     }
 
     //Checks if the options fields are valid by checking if any of the fields have the same value
@@ -227,10 +205,38 @@ const isValidInput = function validateInput() {
                         errorMessage.classList.add('hidden')
                     }, 3000)
         
-        
                     return; // Stop checking once a pair is found
                 }
             }
+        }
+    }
+
+    //Checks if the user has selected a correct answer
+    if (valid) {
+        let atLeastOneActive = false; //Track if at least one checkbox is active
+        
+        for (const checkbox of checks) {
+            if (checkbox.classList.contains('active')) {
+                atLeastOneActive = true; //At least one checkbox has 'active' class
+                break; //No need to continue loop, we found one active checkbox
+            }
+        }
+        
+        //If no checkbox is active, mark them as error
+        if (!atLeastOneActive) {
+            checkContainers.forEach((checkContainer) => {
+                checkContainer.classList.add('error');
+                checkContainer.classList.remove('success');
+            });
+        
+            errorMessage.classList.remove('hidden');
+            errorMessage.innerHTML = 'Please select a correct option';
+        
+            setTimeout(() => {
+                errorMessage.classList.add('hidden');
+            }, 3000);
+        
+            return false; //Return false because no checkbox is active
         }
     }
 
@@ -243,11 +249,9 @@ function formValidation() {
 
     submitButton.addEventListener('click', (e) => {
         e.preventDefault()
-        //isValidInput(e)
         
         if(isValidInput(e)) {
-            //console.log('heck yea')
-            
+            //console.log('heck yea')    
             showBlock()
         } /* else {
             console.log('oh no')
