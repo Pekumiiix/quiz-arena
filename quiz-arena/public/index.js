@@ -166,7 +166,6 @@ const isValidInput = function validateInput() {
 
     checks.forEach((check) => {
         if(check.classList.contains('active')) {
-            valid = true;
             fauxCheck = false;
         } else {
             fauxCheck = true;
