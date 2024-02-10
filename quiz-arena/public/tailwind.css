@@ -1064,6 +1064,20 @@ textarea{
     line-height: 1.75rem;
   }
 
+  .arrow-container{
+    top: 33%;
+  }
+
+  .arrow-container.active{
+    top: 50%;
+  }
+
+  .select-container .toggle-btn{
+    height: 70px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .msg-block{
     width: 90%;
   }

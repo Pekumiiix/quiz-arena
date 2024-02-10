@@ -220,6 +220,7 @@ const isValidInput = function validateInput() {
                     //console.log(`Input${i + 1} and Input${j + 1} have the same value: ${options[i].value}`);
         
                     errorMessage.classList.remove('hidden')
+                    errorMessage.classList.add('slide-in')
                     errorMessage.innerHTML = 'Two options cannot be of the same value'
         
                     setTimeout(() => {

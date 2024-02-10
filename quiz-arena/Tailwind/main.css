@@ -249,6 +249,18 @@ textarea {
         @apply text-lg
     }
 
+    .arrow-container {
+        @apply top-[33%]
+    }
+
+    .arrow-container.active {    
+        @apply top-[50%]
+    }
+
+    .select-container .toggle-btn {
+        @apply h-[70px] text-lg
+    }
+
     .msg-block {
         @apply w-[90%]
     }
