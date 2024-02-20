@@ -647,7 +647,7 @@ nav{
   gap: 0.75rem;
 }
 
-.nav-right img{
+.nav-right img P{
   height: 52px;
   width: 52px;
   border-radius: 50%;
@@ -656,7 +656,6 @@ nav{
 .nav-right-det-ctn{
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 
 .username{
@@ -697,7 +696,6 @@ main{
 }
 
 .intro-details{
-  margin-top: 0.25rem;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.75rem;
@@ -724,7 +722,7 @@ label{
 }
 
 .section-description{
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   letter-spacing: -0.36px;
@@ -769,12 +767,11 @@ textarea{
   outline-width: 0px;
 }
 
-.option-ctn .correct-ctn {
-  transition: border-color .3s ease-in-out;
+.option-ctn .correct-ctn{
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .checkbox {
@@ -851,18 +848,9 @@ textarea{
   padding-bottom: 0.75rem;
 }
 
-.option-ctn-2 p:hover, .answer-ctn p:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
 .option-ctn-2 p:active, .answer-ctn p:active{
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
-.input {
-  transition: border-color .3s ease-in-out;
 }
 
 .input.success, .correct-ctn.success{
@@ -894,7 +882,7 @@ textarea{
   top: 50%
 }
 
-.submit{
+button, .submit{
   margin-bottom: 2.5rem;
   display: flex;
   height: 60px;
@@ -906,7 +894,7 @@ textarea{
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.48px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1000,13 +988,13 @@ textarea{
   text-align: center;
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-weight: 500;
+  font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .slide-in {
-  animation: slide-in .3s 1 ease-in;
+  animation: slide-in .5s 1 ease-in;
 }
 
 @keyframes slide-in {
@@ -1036,55 +1024,11 @@ textarea{
     width: 95%;
   }
 
-  .intro-headline{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .intro-details{
-    line-height: 1.5rem;
-  }
-
   form{
-    width: 95%;
-  }
-
-  label{
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  .section-description{
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  .input, .correct-ctn p, .subject-input, .subject, .dif{
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .arrow-container{
-    top: 33%;
-  }
-
-  .arrow-container.active{
-    top: 50%;
-  }
-
-  .select-container .toggle-btn{
-    height: 70px;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    width: 90%;
   }
 
   .msg-block{
     width: 90%;
-  }
-
-  .submit{
-    height: 45px;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 }

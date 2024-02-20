@@ -38,12 +38,12 @@ nav {
     @apply flex mr-5 items-center justify-center gap-3
 }
 
-.nav-right img {
+.nav-right img P{
     @apply h-[52px] w-[52px] rounded-[50%]
 }
 
 .nav-right-det-ctn {
-    @apply flex flex-col items-end
+    @apply flex flex-col
 }
 
 .username {
@@ -67,7 +67,7 @@ main {
 }
 
 .intro-details {
-    @apply text-myblack opacity-60 text-lg leading-7 font-normal mt-1
+    @apply text-myblack opacity-60 text-lg leading-7 font-normal
 }
 
 form {
@@ -79,7 +79,7 @@ label {
 }
 
 .section-description {
-    @apply text-myblack opacity-60 text-lg leading-7 tracking-[-0.36px] mb-4
+    @apply text-myblack opacity-60 text-lg leading-7 tracking-[-0.36px] mb-3
 }
 
 textarea {
@@ -91,8 +91,6 @@ textarea {
 }
 
 .option-ctn .correct-ctn {
-    transition: border-color .3s ease-in-out;
-
     @apply flex justify-between items-center relative
 }
 
@@ -116,7 +114,6 @@ textarea {
 
 .subject-ctn .option-ctn-2, .subject-ctn .answer-ctn {
     box-shadow: 1px 1px 15px 5px rgba(20, 25, 31, .2);
-
     @apply flex-col w-[100%] bg-white text-[22px] text-myblack tracking-[-0.44px] font-normal items-center gap-2 rounded-md border
 
     border-borderColor mt-3
@@ -125,11 +122,7 @@ textarea {
 .option-ctn-2 p, .answer-ctn p {
     @apply w-[100%] px-2 py-3 cursor-pointer
 
-    active:bg-gray-50 hover:bg-gray-50
-}
-
-.input {
-    transition: border-color .3s ease-in-out;
+    active:bg-gray-50
 }
 
 .input.success, .correct-ctn.success {
@@ -156,8 +149,8 @@ textarea {
     @apply top-[50%]
 }
 
-.submit {
-    @apply flex items-center justify-center w-[100%] h-[60px] text-white bg-[#0F2451] text-2xl font-medium tracking-[-0.48px] text-center
+button, .submit {
+    @apply flex items-center justify-center w-[100%] h-[60px] text-white bg-[#0F2451] text-2xl font-semibold tracking-[-0.48px] text-center
     
     mb-10 outline-0
 }
@@ -191,11 +184,11 @@ textarea {
 }
 
 .msg-block button {
-    @apply bg-[#0F2451] text-white text-lg font-medium flex items-center justify-center text-center h-[50px] w-[90%]
+    @apply bg-[#0F2451] text-white text-lg font-semibold flex items-center justify-center text-center h-[50px] w-[90%]
 }
 
 .slide-in {
-    animation: slide-in .3s 1 ease-in;
+    animation: slide-in .5s 1 ease-in;
 }
 
 @keyframes slide-in {
@@ -225,47 +218,11 @@ textarea {
         @apply w-[95%]
     }
 
-    .intro-headline {
-        @apply text-2xl
-    }
-
-    .intro-details {
-        @apply leading-6
-    }
-
     form {
-        @apply w-[95%]
-    }
-
-    label {
-        @apply text-xl
-    }
-
-    .section-description {
-        @apply text-base
-    }
-
-    .input, .correct-ctn p, .subject-input, .subject, .dif {
-        @apply text-lg
-    }
-
-    .arrow-container {
-        @apply top-[33%]
-    }
-
-    .arrow-container.active {    
-        @apply top-[50%]
-    }
-
-    .select-container .toggle-btn {
-        @apply h-[70px] text-lg
+        @apply w-[90%]
     }
 
     .msg-block {
         @apply w-[90%]
-    }
-
-    .submit {
-        @apply text-lg h-[45px]
     }
 }

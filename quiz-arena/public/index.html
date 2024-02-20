@@ -39,8 +39,8 @@
         <!-----------------Intro section------------------->
         <section class="intro">
             <p class="intro-headline">Add question</p>
-            <p class="intro-details">Effortlessly expand your quiz database: Seamlessly add questions, answers, difficulty levels, 
-                and subjects with ease.
+            <p class="intro-details">Tailor your learning experience with difficulty levels in quizzes. Whether you're seeking a challenge or a comfortable review, 
+                choose a difficulty level that matches your proficiency
             </p>
         </section>
 
@@ -49,25 +49,31 @@
             <!--------------------------Qusetion input container------------>
             <div class="question-ctn flex flex-col">
                 <label for="question">Question</label>
-                <p class="section-description">Input your question here and let the fun begin!</p>
+                <p class="section-description">Tailor your learning experience with difficulty levels in quizzes. Whether you're seeking a challenge or a comfortable 
+                    review, choose a difficulty level that matches your proficiency
+                </p>
 
                 <textarea name="question" cols="30" rows="10" placeholder="Input your question" class="input"></textarea>
             </div>
             <!-----------------Options input container---------------->
             <div class="option-ctn flex flex-col">
-                <label for="options">Options</label>
-                <p class="section-description">Input your options here for a tailored experience.</p>
+                 <label for="options">Options</label>
+                 <p class="section-description">Tailor your learning experience with difficulty levels in quizzes. Whether you're seeking a challenge or a comfortable 
+                    review, choose a difficulty level that matches your proficiency
+                </p>
 
-                <input type="text" name="options" placeholder="Input Option One" class="mb-3 input option">
-                <input type="text" name="options" placeholder="Input Option Two" class="mb-3 input option">
-                <input type="text" name="options" placeholder="Input Option Three" class="mb-3 input option">
-                <input type="text" name="options" placeholder="Input Option Four" class="mb-3 input option">
+                <input type="text" name="options[]" placeholder="Option One" class="mb-3 input option">
+                <input type="text" name="options[]" placeholder="Option Two" class="mb-3 input option">
+                <input type="text" name="options[]" placeholder="Option Three" class="mb-3 input option">
+                <input type="text" name="options[]" placeholder="Option Four" class="mb-3 input option">
             </div>
 
-            <!-----------------Correct option selector container--------------------->
+            <!-----------------Correct option selector------------------->
             <div class="option-ctn flex flex-col">
                 <label for="correct-option">Correct answer option</label>
-                <p class="section-description">Select the right option to complete your quiz.</p>
+                <p class="section-description">Tailor your learning experience with difficulty levels in quizzes. Whether you're seeking a challenge or a comfortable 
+                   review, choose a difficulty level that matches your proficiency
+               </p>
                <!----------------Option one selector------------------->
                <div class="correct-ctn mb-3">
                     <p>Option One</p>
@@ -83,7 +89,7 @@
                     <p>Option Three</p>
                     <div class="checkbox"></div>
                </div>
-               <!----------------Option four selector------------------->
+               <!----------------Option one selector------------------->
                <div class="correct-ctn mb-3">
                     <p>Option Four</p>
                     <div class="checkbox"></div>
@@ -92,7 +98,9 @@
             <!-----------------Subject input container---------------------->
             <div class="subject-ctn flex flex-col">
                 <label for="subject">Subject choice</label>
-                <p class="section-description">Choose a subject that matches your question.</p>
+                <p class="section-description">Tailor your learning experience with difficulty levels in quizzes. Whether you're seeking a challenge or a comfortable 
+                    review, choose a difficulty level that matches your proficiency
+                </p>
                 <!------------drop down menu---------->
                 <div class="select-container">
                     <input type="text" readonly placeholder="Choose subject" name="subject" class="toggle-btn subject-input input">
@@ -111,7 +119,8 @@
             <!-----------------Difficulty input container---------------------->
             <div class="subject-ctn flex flex-col">
                 <label for="difficulty">Difficulty level</label>
-                <p class="section-description">Choose a difficulty level that matches your question.
+                <p class="section-description">Tailor your learning experience with difficulty levels in quizzes. Whether you're seeking a challenge or a comfortable 
+                    review, choose a difficulty level that matches your proficiency
                 </p>
                 <!----------------------Drop down down container---------------->
                 <div class="select-container">

@@ -184,6 +184,35 @@ const isValidInput = function validateInput() {
         })
     }
 
+    //Checks if the user has selected a correct answer
+    /*if (valid) {
+        for (const checkbox of checks) {
+            if (checkbox.classList.contains('active')) {
+                valid = true; //At least one checkbox has 'active' class
+    
+                checkContainers.forEach((checkContainer) => {
+                    checkContainer.classList.remove('error')
+                    checkContainer.classList.add('success')
+                })
+            }
+        }
+    
+        if (!valid) {
+            checkContainers.forEach((checkContainer) => {
+                checkContainer.classList.add('error')
+                checkContainer.classList.remove('success')
+            })
+    
+            errorMessage.classList.remove('hidden')
+            errorMessage.innerHTML = 'Please select a correct option'
+    
+            setTimeout(() => {
+                errorMessage.classList.add('hidden')
+            }, 3000)
+        }
+    }*/
+    
+
     //Checks if the options fields are valid by checking if any of the fields have the same value
     if(valid) {
         for (let i = 0; i < options.length - 1; i++) {
@@ -197,12 +226,12 @@ const isValidInput = function validateInput() {
                     //console.log(`Input${i + 1} and Input${j + 1} have the same value: ${options[i].value}`);
         
                     errorMessage.classList.remove('hidden')
-                    errorMessage.classList.add('slide-in')
                     errorMessage.innerHTML = 'Two options cannot be of the same value'
         
                     setTimeout(() => {
                         errorMessage.classList.add('hidden')
                     }, 3000)
+        
         
                     return; // Stop checking once a pair is found
                 }
@@ -210,7 +239,6 @@ const isValidInput = function validateInput() {
         }
     }
 
-    //Checks if the user has selected a correct answer
     if (valid) {
         let atLeastOneActive = false; //Track if at least one checkbox is active
         
@@ -245,13 +273,32 @@ const isValidInput = function validateInput() {
 //Submit form if it's valid
 function formValidation() {
     const submitButton = document.querySelector('.submit')
+    const form = document.querySelector('.form')
 
     submitButton.addEventListener('click', (e) => {
         e.preventDefault()
+        //isValidInput(e)
         
         if(isValidInput(e)) {
-            //console.log('heck yea')    
-            showBlock()
+            //console.log('heck yea')
+
+            const options =  document.querySelectorAll('.option')
+            const formData = new FormData(form);
+
+            options.forEach((option, index) => {
+                const optionText = option.value;
+                const isCorrectValue = option.dataset.is_correct;
+
+                formData.append(`option_text_${index}`, optionText);
+                formData.append(`is_correct_${index}`, isCorrectValue);
+            })
+
+            //Logs the formData to on the console
+            /*for (const pair of formData.entries()) {
+                console.log(pair[0], pair[1]);
+            }*/
+
+            submitForm(formData)
         } /* else {
             console.log('oh no')
         }*/
@@ -259,6 +306,40 @@ function formValidation() {
 }
 
 formValidation()
+
+//Submit form to the backend for further processing
+function submitForm(form) {
+    const erroMessage = document.querySelector('.error-msg');
+
+    fetch('./submit-form.php', {
+        method: 'POST',
+        body: form,
+    })
+    .then(response => response.json()) //Parse response body as JSON
+    .then(data => {
+        //Handle server response
+        //console.log(data);
+
+        if(data.success) {
+            //Entry is successful, call showBlock function
+            showBlock()
+
+            //console.log('yay');
+        } else {
+            //Handle error or display an error message
+            erroMessage.classList.remove('hidden');
+            erroMessage.innerHTML = data.message;
+        
+            setTimeout(() => {
+                erroMessage.classList.add('hidden');
+            }, 3000);
+
+            console.error(data.message);
+        }
+    })
+    .catch(error => console.error(error));
+}
+
 
 //Show entry status
 function showBlock() {
@@ -270,3 +351,5 @@ function showBlock() {
 
     messageBlock.classList.add('slide-in')
 }
+
+//Close all drop-down's when the user clicks outside of the drop-down
