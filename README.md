@@ -12,7 +12,7 @@ A website that allows users to submit quiz questions along with options, difficu
 
 
 ## 🛠 Skills
-Javascript, HTML, CSS, Tailwind CSS
+Javascript, HTML, CSS, Tailwind CSS, PHP, MySQL
 
 
 ## Deployment
